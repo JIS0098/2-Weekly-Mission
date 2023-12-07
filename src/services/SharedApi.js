@@ -1,4 +1,4 @@
-import API_BASE_URL from "../utils/ApiBaseUrl.js"
+import API_BASE_URL from "./ApiBaseUrl";
 
 export async function getUserData() {
   try {

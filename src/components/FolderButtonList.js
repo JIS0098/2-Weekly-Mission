@@ -47,14 +47,23 @@ function Button({ folder, setId }) {
   const handleChangeID = (folderId) => {
     setId(folderId);
   };
-  return <StyledButton onClick={() => handleChangeID(folder.id)}>{folder && folder.name}</StyledButton>;
+  return (
+    <StyledButton onClick={() => handleChangeID(folder.id)}>
+      {folder && folder.name}
+    </StyledButton>
+  );
 }
 
 function FolderButtonList({ setId, folders }) {
   return (
     <div>
       <StyledButtonBox>
-        <StyledButtons>{folders && folders.map((folder) => <Button setId={setId} folder={folder} key={folder.id} />)}</StyledButtons>
+        <StyledButtons>
+          {folders &&
+            folders.map((folder) => (
+              <Button setId={setId} folder={folder} key={folder.id} />
+            ))}
+        </StyledButtons>
         <StyledAddLink>+</StyledAddLink>
       </StyledButtonBox>
     </div>

@@ -37,7 +37,7 @@
 
 .noImage {
   width: 100%;
-  background-image: url("../../public/images/noImage.svg");
+  background-image: url('../../public/images/noImage.svg');
 }
 
 .cardDescription {

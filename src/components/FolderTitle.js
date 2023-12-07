@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const categoryList = [
-  { title: "공유", image: process.env.PUBLIC_URL + "/images/share.png" },
-  { title: "이름 변경", image: process.env.PUBLIC_URL + "/images/pen.png" },
-  { title: "삭제", image: process.env.PUBLIC_URL + "/images/delete.png" },
+  { title: "공유", image: `${process.env.PUBLIC_URL}/images/share.png` },
+  { title: "이름 변경", image: `${process.env.PUBLIC_URL}/images/pen.png` },
+  { title: "삭제", image: `${process.env.PUBLIC_URL}/images/delete.png` },
 ];
 
 const StyledCategoryBox = styled.div`

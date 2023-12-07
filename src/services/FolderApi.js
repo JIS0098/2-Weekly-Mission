@@ -1,4 +1,4 @@
-import API_BASE_URL from "../utils/ApiBaseUrl.js"
+import API_BASE_URL from "./ApiBaseUrl";
 
 export async function getFolderUserData() {
   try {
@@ -32,7 +32,9 @@ export async function getAllLinksData() {
 
 export async function getSelectData(id) {
   try {
-    const response = await fetch(`${API_BASE_URL}/users/1/links?folderId=${id}`);
+    const response = await fetch(
+      `${API_BASE_URL}/users/1/links?folderId=${id}`,
+    );
     if (!response.ok) throw new Error();
     return await response.json();
   } catch (error) {

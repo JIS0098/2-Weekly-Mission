@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import FolderBanner from "../components/FolderBanner";
@@ -7,8 +8,12 @@ import styles from "../styles/FolderPage.module.css";
 import FolderButtonList from "../components/FolderButtonList";
 import FolderTitle from "../components/FolderTitle";
 import FloatingButton from "../components/FloatingButton";
-import { getFolderUserData, getSelectData, getAllLinksData, getFoldersData } from "../services/FolderApi";
-import { useEffect, useState } from "react";
+import {
+  getFolderUserData,
+  getSelectData,
+  getAllLinksData,
+  getFoldersData,
+} from "../services/FolderApi";
 
 function FolderPage() {
   const [folders, setFolders] = useState([]);
@@ -31,7 +36,7 @@ function FolderPage() {
     const { data } = await getFoldersData();
     addFolder.link = allData.data;
     setFolders([addFolder, ...data]);
-    if (id == 0) {
+    if (id === 0) {
       setLinks(addFolder.link);
     }
   };
@@ -44,7 +49,7 @@ function FolderPage() {
   useEffect(() => {
     handleEmailLoad();
     handleFoldersLoad();
-    if (id != 0) {
+    if (id !== 0) {
       selectFolderLoad();
     }
   }, [id]);
@@ -63,7 +68,7 @@ function FolderPage() {
               <div>저장된 링크가 없습니다.</div>
             </div>
           ) : (
-            <CardList links={links} page={"folderPage"} />
+            <CardList links={links} />
           )}
         </div>
       </section>
